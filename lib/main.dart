@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -85,17 +87,25 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ],
           bottom: TabBar(
-            unselectedLabelColor: Colors.black54,
-            indicatorColor: Colors.blue,
-            labelColor: Colors.blue,
-            tabs: [
-              Tab(icon: Icon(Icons.home)),
-              Tab(icon: Icon(Icons.group)),
-              Tab(icon: Icon(Icons.ondemand_video)),
-              Tab(icon: Icon(Icons.notifications_none)),
-              Tab(icon: Icon(Icons.menu))
-            ],
-          ),
+              unselectedLabelColor: Colors.black54,
+              indicatorColor: Colors.blue,
+              labelColor: Colors.blue,
+              tabs: [
+                Tab(icon: Icon(Icons.home)),
+                Tab(icon: Icon(Icons.group)),
+                Tab(icon: Icon(Icons.ondemand_video)),
+                Tab(icon: Icon(Icons.notifications_none)),
+                Tab(icon: Icon(Icons.menu))
+              ]),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            Homescreen(),
+            Icon(Icons.group),
+            Icon(Icons.ondemand_video),
+            Icon(Icons.notifications_none),
+            Icon(Icons.menu)
+          ],
         ),
 
         // Column is also a layout widget. It takes a list of children and
