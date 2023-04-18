@@ -112,7 +112,30 @@ class _HomescreenState extends State<Homescreen> {
             ],
           ),
           Container(height: 10, color: Colors.black26),
-          Expanded(child: Container()),
+          Expanded(
+            child: Container(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    mystory(),
+                    friendstory(
+                        picture: 'assets/images/friendstory1.png',
+                        name: "ali masood",
+                        profpic: 'assets/images/friendstory2.png'),
+                    friendstory(
+                        picture: 'assets/images/friendstory2.png',
+                        name: "usman",
+                        profpic: 'assets/images/friendstory3.png'),
+                    friendstory(
+                        picture: 'assets/images/friendstory3.png',
+                        name: "marium",
+                        profpic: 'assets/images/friendstory1.png')
+                  ],
+                ),
+              ),
+            ),
+          ),
           Container(height: 10, color: Colors.black26),
           Expanded(child: Container())
         ],
@@ -167,4 +190,83 @@ class _HomescreenState extends State<Homescreen> {
       ),
     );
   }
+}
+
+Widget mystory() {
+  return Container(
+      width: 120,
+      height: double.infinity,
+      color: Colors.black12,
+      child: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Image(
+            image: AssetImage('assets/images/mystory.png'),
+            fit: BoxFit.cover,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.add_circle, color: Colors.white, size: 40),
+              ),
+            ],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Add to story", style: TextStyle(color: Colors.white))
+            ],
+          ),
+        ],
+      ));
+}
+
+Widget friendstory({picture, name, profpic}) {
+  return Container(
+      width: 120,
+      height: double.infinity,
+      color: Colors.black12,
+      child: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Image(
+            image: AssetImage(picture),
+            fit: BoxFit.cover,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text(name, style: TextStyle(color: Colors.white))],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  width: 40,
+                  height: 40,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30.0),
+                        border: Border.all(
+                            color: Colors.blue,
+                            style: BorderStyle.solid,
+                            width: 2.0),
+                        image: DecorationImage(
+                            image: AssetImage(profpic), fit: BoxFit.cover)),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ));
 }
