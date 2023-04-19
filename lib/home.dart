@@ -45,12 +45,12 @@ class _HomescreenState extends State<Homescreen> {
             Divider(color: Colors.black),
 
             Container(
-              height: 33,
+              height: 36,
               child: Row(
                 children: [
                   Expanded(
                       child: Container(
-                          height: 33,
+                          height: 36,
                           child: Row(
                             // mainAxisAlignment: MainAxisAlignment.center,
                             // crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,7 @@ class _HomescreenState extends State<Homescreen> {
                           ))),
                   Expanded(
                     child: Container(
-                        height: 30,
+                        height: 34,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -95,7 +95,7 @@ class _HomescreenState extends State<Homescreen> {
                         )),
                   ),
                   Container(
-                    height: 30,
+                    height: 34,
                     width: 145,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -122,7 +122,8 @@ class _HomescreenState extends State<Homescreen> {
                 ],
               ),
             ),
-            Container(height: 7, color: Colors.black26),
+            Container(height: 9, color: Colors.black26),
+            Container(height: 5, color: Colors.white),
 
             Container(
               height: 155,
@@ -131,14 +132,17 @@ class _HomescreenState extends State<Homescreen> {
                 child: Row(
                   children: [
                     mystory(),
+                    Container(color: Colors.white, width: 5),
                     friendstory(
                         picture: 'assets/images/friendstory1.png',
                         name: "ali masood",
                         profpic: 'assets/images/friendstory2.png'),
+                    Container(color: Colors.white, width: 5),
                     friendstory(
                         picture: 'assets/images/friendstory2.png',
                         name: "usman",
                         profpic: 'assets/images/friendstory3.png'),
+                    Container(color: Colors.white, width: 5),
                     friendstory(
                         picture: 'assets/images/friendstory3.png',
                         name: "marium",
@@ -147,7 +151,8 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
             ),
-            Container(height: 7, color: Colors.black26),
+            Container(height: 5, color: Colors.white),
+            Container(height: 9, color: Colors.black26),
             friendpost(),
             //friendpost()
           ],
@@ -279,7 +284,7 @@ Widget friendstory({picture, name, profpic}) {
                 )
               ],
             ),
-          )
+          ),
         ],
       ));
 }
@@ -289,17 +294,71 @@ Widget friendpost() {
     children: [
       Row(
         children: [
-          Container(height: 50, width: 60, color: Colors.black),
+          Container(
+              height: 53,
+              width: 58,
+              child: Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40.0),
+                      border: Border.all(
+                          color: Colors.brown,
+                          style: BorderStyle.solid,
+                          width: 1.0),
+                      image: DecorationImage(
+                          image:
+                              AssetImage('assets/images/friendpostprof1.png'),
+                          fit: BoxFit.cover)),
+                ),
+              )),
           Column(
             children: [
-              Container(height: 15, width: 240, color: Colors.green),
-              Container(height: 35, width: 240, color: Colors.yellow)
+              Padding(
+                padding: const EdgeInsets.only(left: 4.0),
+                child: Container(
+                  height: 23,
+                  width: 240,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Text(
+                      "Chun Li",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 4.0),
+                child: Container(
+                  height: 27,
+                  width: 240,
+                  child: Text(
+                    "Yesterday at 11:35 AM , Karachi",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+              )
             ],
           ),
-          Container(height: 50, width: 60, color: Colors.black)
+          Container(
+            height: 50,
+            width: 58,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.more_horiz),
+            ),
+          )
         ],
       ),
-      Container(height: 450, width: 360, color: Colors.red)
+      Container(
+        height: 450,
+        width: 360,
+        child: Image(
+          image: AssetImage('assets/images/friendpostpic1.png'),
+          fit: BoxFit.cover,
+        ),
+      )
     ],
   );
 }
