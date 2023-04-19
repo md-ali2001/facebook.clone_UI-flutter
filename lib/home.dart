@@ -45,26 +45,23 @@ class _HomescreenState extends State<Homescreen> {
             Divider(color: Colors.black),
 
             Container(
-              height: 27,
+              height: 33,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                       child: Container(
-                          height: 27,
+                          height: 33,
                           child: Row(
                             // mainAxisAlignment: MainAxisAlignment.center,
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 12.0),
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.videocam,
-                                    size: 25,
-                                    color: Colors.red,
-                                  ),
+                              IconButton(
+                                padding: EdgeInsets.all(0),
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.videocam,
+                                  size: 25,
+                                  color: Colors.red,
                                 ),
                               ),
                               Padding(
@@ -81,6 +78,7 @@ class _HomescreenState extends State<Homescreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
+                              padding: EdgeInsets.all(0),
                               onPressed: () {},
                               icon: Icon(
                                 Icons.photo_album,
@@ -103,6 +101,7 @@ class _HomescreenState extends State<Homescreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
+                          padding: EdgeInsets.all(0),
                           onPressed: () {},
                           icon: Icon(
                             Icons.location_on,
