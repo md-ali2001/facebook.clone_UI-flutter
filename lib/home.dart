@@ -358,7 +358,39 @@ Widget friendpost() {
           image: AssetImage('assets/images/friendpostpic1.png'),
           fit: BoxFit.cover,
         ),
-      )
+      ),
+      Row(
+        children: [
+          Container(
+              height: 35,
+              width: 120,
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: IconButton(
+                      padding: EdgeInsets.all(0),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.thumb_up,
+                        size: 25,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 0),
+                    child: Text("Like", style: TextStyle(fontSize: 15)),
+                  )
+                ],
+              )),
+          Container(width: 120, height: 35, color: Colors.green),
+          Container(width: 120, height: 35, color: Colors.yellow)
+        ],
+      ),
+      Container(height: 35, color: Colors.red)
     ],
   );
 }
