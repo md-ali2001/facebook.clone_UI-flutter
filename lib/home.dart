@@ -352,18 +352,77 @@ Widget friendpost() {
         ],
       ),
       Container(
-        height: 450,
+        height: 30,
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(3),
+              child: Text("hey , how are you all?"),
+            )
+          ],
+        ),
+      ),
+      Container(
+        height: 420,
         width: 360,
         child: Image(
           image: AssetImage('assets/images/friendpostpic1.png'),
           fit: BoxFit.cover,
         ),
       ),
+      Container(
+        height: 25,
+        child: Row(
+          children: [
+            Container(
+              width: 6,
+              child: IconButton(
+                padding: EdgeInsets.all(0),
+                onPressed: () {},
+                icon: Icon(
+                  Icons.thumb_up,
+                  size: 20,
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 13.0),
+              child: Container(
+                width: 6,
+                child: IconButton(
+                  padding: EdgeInsets.all(0),
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite,
+                    size: 20,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 13.0),
+              child: Container(
+                width: 30,
+                child: Text("2k"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 160.0),
+              child: Container(
+                width: 132,
+                child: Text("Comments:302"),
+              ),
+            )
+          ],
+        ),
+      ),
       Row(
         children: [
           Container(
-              height: 35,
-              width: 120,
+              height: 45,
+              width: 105,
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 // crossAxisAlignment: CrossAxisAlignment.start,
@@ -386,11 +445,56 @@ Widget friendpost() {
                   )
                 ],
               )),
-          Container(width: 120, height: 35, color: Colors.green),
-          Container(width: 120, height: 35, color: Colors.yellow)
+          Container(
+            width: 140,
+            height: 35,
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 2),
+                  child: IconButton(
+                    padding: EdgeInsets.all(0),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.comment,
+                      size: 20,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 0),
+                  child: Text("Comments", style: TextStyle(fontSize: 14)),
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: 115,
+            height: 35,
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0),
+                  child: IconButton(
+                    padding: EdgeInsets.all(0),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.share,
+                      size: 25,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 0),
+                  child: Text("Share", style: TextStyle(fontSize: 15)),
+                )
+              ],
+            ),
+          )
         ],
       ),
-      Container(height: 35, color: Colors.red)
     ],
   );
 }
